@@ -4,6 +4,9 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    exclude: ['e2e/**'], // we'll add Playwright later
+    // Only run OUR tests:
+    include: ['tests/**/*.test.{js,ts,jsx,tsx}'],
+    // And be explicit about excludes:
+    exclude: ['**/node_modules/**', 'e2e/**', '**/dist/**'],
   },
 });
