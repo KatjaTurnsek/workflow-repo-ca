@@ -12,11 +12,10 @@
 Create a `.env` from `.env.example` with:
 BASE_URL=http://localhost:5173
 
-### optional path overrides if your app uses html files:
+**Optional path overrides (HTML files):**
 
-### HOME_PATH=/index.html
+- **HOME_PATH**: `/index.html`
+- **LOGIN_PATH**: `/login/index.html`
 
-### LOGIN_PATH=/login/index.html
-
-VALID_EMAIL=your@stud.noroff.no
-VALID_PASSWORD=your-test-password
+- VALID_EMAIL=your@stud.noroff.no
+- VALID_PASSWORD=your-test-password
