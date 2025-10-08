@@ -1,5 +1,5 @@
 const { defineConfig } = require('@playwright/test');
-require('dotenv').config();
+require('dotenv').config({ path: '.env', override: true });
 
 const BASE_URL = process.env.BASE_URL || 'http://localhost:5173';
 
