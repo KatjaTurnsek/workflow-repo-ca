@@ -1,5 +1,5 @@
-const tokenKey = "token";
-const userKey = "user";
+const tokenKey = 'token';
+const userKey = 'user';
 
 export function saveToken(token) {
   saveToStorage(tokenKey, token);
@@ -33,4 +33,20 @@ function saveToStorage(key, value) {
 function getFromStorage(key) {
   const value = localStorage.getItem(key);
   return value ? JSON.parse(value) : null;
+}
+
+/**
+ * Reads a user object from localStorage and returns a display name.
+ * Returns null if missing or malformed.
+ */
+export function getUserName() {
+  try {
+    const raw = localStorage.getItem('user'); // change 'user' if your app uses a different key
+    if (!raw) return null;
+    const user = JSON.parse(raw);
+    // support common shapes
+    return user?.name ?? user?.username ?? null;
+  } catch {
+    return null;
+  }
 }
